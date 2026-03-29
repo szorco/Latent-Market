@@ -1,4 +1,4 @@
-# Orbit
+# Latent-Market
 
 > Market microstructure learning engine — backtesting, pattern recognition, and ML model lifecycle pipeline.
 
