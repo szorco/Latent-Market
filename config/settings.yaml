@@ -1,0 +1,56 @@
+# --- Data layer ---
+market_simulator:
+  n_assets: 4
+  n_days: 252
+  tick_size: 0.01
+
+etl:
+  raw_path: data/raw
+  processed_path: data/processed
+  schema_version: "1.0"
+
+feature_store:
+  rolling_windows: [5, 10, 20, 60]
+  features_path: data/features
+
+# --- Strategies ---
+market_maker:
+  spread_bps: 5
+  max_inventory: 1000
+
+stat_arb:
+  lookback: 60
+  z_threshold: 2.0
+
+momentum:
+  ema_fast: 10
+  ema_slow: 30
+
+options_pricer:
+  risk_free_rate: 0.05
+
+# --- Backtester ---
+backtester:
+  initial_capital: 100_000
+  commission_bps: 1
+  slippage_bps: 0.5
+
+# --- ML ---
+trainer:
+  model_type: gradient_boosting
+  test_size: 0.2
+  onnx_export: true
+
+optimizer:
+  method: bayesian      # grid | bayesian
+  n_trials: 50
+
+scoring:
+  host: "0.0.0.0"
+  port: 8000
+
+# --- Risk ---
+risk:
+  max_drawdown: 0.15
+  var_confidence: 0.95
+  min_sharpe: 0.5

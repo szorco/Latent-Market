@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Data
+data/raw/
+data/processed/
+data/features/
+*.parquet
+
+# ML artifacts
+ml/registry/artifacts/
+*.onnx
+
+# Env
+.env
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Reporting
+reports/
+
+# OS
+.DS_Store
